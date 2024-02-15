@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export const PAGE_TITLE = 'Intrinsic | Web Development and Programming | Zabrze'
+// export const PAGE_TITLE = 'Intrinsic | Web Development and Programming | Zabrze'
 
 export default function Home() {
     // const t = useTranslations()
