@@ -1,5 +1,5 @@
 import { Locale, i18nConfig } from '@/i18n.config'
-import { match } from '@formatjs/intl-localematcher'
+// import { match } from '@formatjs/intl-localematcher'
 import { NextRequest } from 'next/server'
 
 /**
