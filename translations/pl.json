@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "locale-selector": {
+      "message": "Wybierz język."
+    },
+    "contact-info": "Kontakt",
+    "home-page": "Główna"
+  },
+  "views": {
+    "home": {
+      "title": "Witaj świecie!",
+      "body": "Ta strona jest teraz po Polsku, powinieneś umieć przeczytać ten tekst, jeśli jesteś Polakiem. Link do szablonu użytego: https://github.com/lauriahlfors/nextjs14-i18n.git"
+    },
+    "contact-info": {
+      "title": "Informacje Kontaktowe",
+      "body": "Ta strona zawiera informacje kontaktowe."
+    }
+  }
+}

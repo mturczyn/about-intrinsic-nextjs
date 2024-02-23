@@ -1,40 +1,57 @@
-# about-intrinsic-nextjs
+# Internationalization (i18n) in Next.js 14 App router.
 
-Another site about my company, using Next.js (in order to hopefully leverage SSR) and hosting the page in Vercel (sort of cloud provider).
+## A Next.js 14 project implementing customizable i18n functionality to the app router, without i18n libraries.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Use .json files to create different translations.
+- Generative TypeScript typing for the created default translation, enhancing DX.
+- Get needed translation strings in frontend with keys.
+- Automatic locale detection & redirection in middleware.
+- Small demo application with server & client components to demonstrate the functionality.
 
-## Getting Started
+## How to install and run the project
 
-First, run the development server:
+1. Clone the project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+git clone git@github.com:lauriahlfors/nextjs14-i18n.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install node modules while on project root.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Run the local dev server.
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## How to use and add translations to the project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a new locale.json file inside the `@/translations` directory that follows the same nested key structure, as specified in the default locale file (`en.json` by default).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Add the new locale.json to be loaded in the translations const found in `@/lib/i18n/loadTranslation.ts`.
 
-## Deploy on Vercel
+```
+const translations = {
+	en: () => import('@/translations/en.json').then((module) => module.default),
+	...,
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+	locale: () => import('@/translations/locale.json').then((module) => module.default)
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Add your new locale to the locales array as a string, in `i18nConfig` found in `@/i18n.ts`. You can also change the default locale here.
+
+```
+export const i18nConfig = {
+	defaultLocale: 'en',
+	locales: ['en', ..., 'locale'],
+} as const;
+```
+
+4. You should be able to access your new locale content inside the server side files in your app automatically. See `@/app/[locale]/layout.tsx` and `@/app/[locale]/page.tsx` for example.
+
+5. To access the locale content inside client side components, you need to pass the `t` const (`const t = await getTranslation(params.locale)` ) to a client component. See `@/app/[locale]/layout.tsx`, `@/components/nav.tsx` and `@/components/locale-selector.tsx` for example how to do this correctly with the right TypeScript typing.

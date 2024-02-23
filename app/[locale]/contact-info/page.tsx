@@ -1,7 +1,15 @@
-import Image from 'next/image'
+import { Locale } from '@/i18n';
+import getTranslation from '@/lib/i18n/getTranslation';
 
-// export const PAGE_TITLE = 'Intrinsic | Web Development and Programming | Zabrze'
+export default async function Page({ params }: { params: { locale: Locale } }) {
+  const translation = await getTranslation(params.locale);
 
-export default function Page() {
-    return <div>Intrinsic Michał Turczyn Contact Info page</div>
+  return (
+    <>
+      <h1 className="text-4xl font-medium tracking-tight">
+        {translation('views.contact-info.title')}
+      </h1>
+      <p>{translation('views.contact-info.body')}</p>
+    </>
+  );
 }
