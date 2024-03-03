@@ -4,16 +4,23 @@
       "message": "Choose a language."
     },
     "contact-info": "Contact Info",
+    "technology-stack": "Technology Stack",
     "home-page": "Home"
   },
   "views": {
     "home": {
       "title": "Hello world!",
-      "body": "This site should be now in English, you should be able to read this text, if you understand English. Link to used template: https://github.com/lauriahlfors/nextjs14-i18n.git"
+      "body": "This site should be now in English, you should be able to read this text, if you understand English."
     },
     "contact-info": {
       "title": "Contact Info",
       "body": "This site contains Contact Info."
+    },
+    "technology-stack": {
+      "title": "Frameworks and libraries",
+      "body": "This site was created using Next.js. For styling I used TailwindCSS..",
+      "i18nTitle": "Internationalization",
+      "i18nParagraph": "For internationalization, I've used template https://github.com/lauriahlfors/nextjs14-i18n.git, as I could not get Next.js library working from scratch."
     }
   }
 }
