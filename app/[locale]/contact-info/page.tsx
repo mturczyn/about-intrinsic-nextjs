@@ -1,15 +1,15 @@
-import { Locale } from '@/i18n';
-import getTranslation from '@/lib/i18n/getTranslation';
+import { useTranslation } from '@/app/i18n'
+import { Locale } from '@/app/i18n/settings'
 
 export default async function Page({ params }: { params: { locale: Locale } }) {
-  const translation = await getTranslation(params.locale);
+    const { t } = await useTranslation(params.locale)
 
-  return (
-    <>
-      <h1 className="text-4xl font-medium tracking-tight">
-        {translation('views.contact-info.title')}
-      </h1>
-      <p>{translation('views.contact-info.body')}</p>
-    </>
-  );
+    return (
+        <>
+            <h1 className="text-4xl font-medium tracking-tight">
+                {t('views.contact-info.title')}
+            </h1>
+            <p>{t('views.contact-info.body')}</p>
+        </>
+    )
 }
