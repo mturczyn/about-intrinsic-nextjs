@@ -1,4 +1,10 @@
 {
     "title": "Cześc!",
-    "body": "<0>To jest paragraf po Polsku</0>"
+    "body": "<0>To jest paragraf po Polsku. <0>Moja pierwsza strona.</0></0>",
+    "home": "Główna",
+    "contact-info": "Kontakt",
+    "technology-stack": "Stack Technologiczny",
+    "locale-selector": {
+        "message": "Wybierz język."
+    }
 }

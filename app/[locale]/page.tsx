@@ -21,7 +21,13 @@ export default function Home({ params }: { params: { locale: Locale } }) {
                 {t('title')}
             </h1>
             <Trans i18nKey={'body'}>
-                <h1 className="text-4xl font-medium tracking-tight"></h1>
+                <p className="font-medium tracking-tight">
+                    <a
+                        className="underline hover:no-underline"
+                        href="https://intrinsic-michal-turczyn.azurewebsites.net"
+                        target="_blank"
+                    ></a>
+                </p>
             </Trans>
         </main>
     )

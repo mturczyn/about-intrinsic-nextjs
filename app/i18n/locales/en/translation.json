@@ -1,4 +1,10 @@
 {
     "title": "Hi there!",
-    "body": "<0>This is paragraph in English.</0>"
+    "body": "<0>This is paragraph in English. <0>My first page.</0></0>",
+    "home": "Home",
+    "contact-info": "Contact Info",
+    "technology-stack": "Technology Stack",
+    "locale-selector": {
+        "message": "Choose a language."
+    }
 }
