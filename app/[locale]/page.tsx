@@ -8,8 +8,7 @@ import { Locale } from '../i18n/settings'
 export default function Home({ params }: { params: { locale: Locale } }) {
     const { t } = useTranslation(params.locale)
     return (
-        // <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <main>
+        <>
             <Image
                 src={authorImage}
                 className="float-right m-5"
@@ -29,6 +28,6 @@ export default function Home({ params }: { params: { locale: Locale } }) {
                     ></a>
                 </p>
             </Trans>
-        </main>
+        </>
     )
 }
