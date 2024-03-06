@@ -1,10 +1,16 @@
 {
-    "title": "Cześc!",
-    "body": "<0>To jest paragraf po Polsku. <0>Moja pierwsza strona.</0></0>",
-    "home": "Główna",
-    "contact-info": "Kontakt",
-    "technology-stack": "Stack Technologiczny",
     "locale-selector": {
         "message": "Wybierz język."
+    },
+    "nav": {
+        "home": "Główna",
+        "contact-info": "Kontakt",
+        "technology-stack": "Stack Technologiczny"
+    },
+    "home": {
+        "title": "Cześć, jestem Michał",
+        "body": "<0>Nazywam się Michał Turczyn. Pracuję jako inżynier oprogramowania, tworzę strony internetowe (takie jak ta) i cieszę się z tego, co robię. Lubię dogłębnie rozumieć to, co robię, i doprowadzać rzeczy do końca.</0><1>Jestem absolwentem matematyki, co bardzo pomogło mi w zdobywaniu umiejętności programowania.</1><2/><3>Mój pierwszy język programowania, który nauczyłem się, to C# wraz z frameworkiem WinForms. Przez lata miałem okazję pracować z wieloma frameworkami .NET, takimi jak ASP.NET (Core, Razor Pages) czy WPF, Blazor. Nauczyłem się również JS (HTML, CSS, JS) i frameworka React.</3><4>Wciąż staram się uczyć i rozwijać. Ta strona jest ewolucją <0>poprzedniej strony</0>, która jest napisana w React jako SPA (single page application). Ta strona z kolei jest napisana z wykorzystaniem Next.js i korzysta ona z optymalizacji, jaką jest SSR (server side rendering).</4>",
+        "previous-employers": "Poprzedni pracodawcy",
+        "previous-employers-body": "Przez całą moją karierę pracowałem dla następujących firm:"
     }
 }

@@ -1,10 +1,16 @@
 {
-    "title": "Hi there!",
-    "body": "<0>This is paragraph in English. <0>My first page.</0></0>",
-    "home": "Home",
-    "contact-info": "Contact Info",
-    "technology-stack": "Technology Stack",
     "locale-selector": {
-        "message": "Choose a language."
+        "message": "Choose language."
+    },
+    "nav": {
+        "home": "Home",
+        "contact-info": "Contact",
+        "technology-stack": "Technology Stack"
+    },
+    "home": {
+        "title": "Hi, I'm Michał",
+        "body": "<0>My name is Michał Turczyn. I work as a software engineer, creating websites (like this one) and enjoying what I do. I like to deeply understand what I do and see things through to completion.</0><1>I graduated in mathematics, which greatly helped me in acquiring programming skills.</1><2/><3>My first programming language I learned was C# along with the WinForms framework. Over the years, I've had the opportunity to work with many .NET frameworks such as ASP.NET (Core, Razor Pages) or WPF, Blazor. I've also learned JS (HTML, CSS, JS) and the React framework.</3><4>I'm still trying to learn and grow. This site is an evolution of the <0>previous site</0>, which is written in React as a SPA (single page application). This site, on the other hand, is written using Next.js and it utilizes the optimization of SSR (server-side rendering).</4>",
+        "previous-employers": "Previous employers",
+        "previous-employers-body": "Throughout my career, I have worked for the following companies:"
     }
 }
