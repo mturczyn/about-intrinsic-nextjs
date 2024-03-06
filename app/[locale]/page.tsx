@@ -14,9 +14,8 @@ import cSharpLogo from '../../public/programming-languages-logo/c-sharp.png'
 import jsLogo from '../../public/programming-languages-logo/js-logo.webp'
 import nextJsLogo from '../../public/programming-languages-logo/next-js.svg'
 import { useEffect } from 'react'
-import { metadata } from './layout'
 
-export const PAGE_TITLE = 'Główna'
+const PAGE_TITLE = 'Główna'
 
 export default function Home({ params }: { params: { locale: Locale } }) {
     const { t } = useTranslation(params.locale)
