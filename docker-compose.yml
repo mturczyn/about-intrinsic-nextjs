@@ -1,0 +1,10 @@
+# docker-compose.yaml
+version: '3.8'
+
+services:
+    frontend:
+        container_name: about-intrinsic-nextjs
+        build:
+            context: .
+        ports:
+            - 3000:3000

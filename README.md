@@ -1,3 +1,9 @@
+# Containerization
+
+This project has docker enabled - it contains all docker scripts (`Dockerfile` and `docker-compose`) to run this application as docker container.
+
+# Standard README for Next.js project
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 Command used to bootstrap the project: `npx create-next-app@latest`.
