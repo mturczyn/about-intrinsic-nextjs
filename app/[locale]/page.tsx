@@ -27,7 +27,7 @@ export default function Home({ params }: { params: { locale: Locale } }) {
     return (
         <>
             <Image
-                style={{ maxWidth: '30%' }}
+                style={{ maxWidth: '40%' }}
                 src={authorImage}
                 className="float-right mt-5 ml-5 mb-5"
                 width="200"
