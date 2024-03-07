@@ -25,7 +25,7 @@ export default function LocaleSelector({ message }: Props) {
     return (
         <div style={{ marginLeft: 'auto' }} className="relative">
             <button
-                className={`flex h-12 w-12 items-center justify-center rounded-lg hover:bg-neutral-100 ${
+                className={`transition-colors duration-1000 flex h-12 w-12 items-center justify-center rounded-lg hover:bg-neutral-200 ${
                     isOpen ? 'bg-neutral-100' : ''
                 } `}
                 onClick={() => setIsOpen(!isOpen)}

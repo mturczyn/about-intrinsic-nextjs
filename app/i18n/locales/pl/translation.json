@@ -12,5 +12,11 @@
         "body": "<0>Nazywam się Michał Turczyn. Pracuję jako inżynier oprogramowania, tworzę strony internetowe (takie jak ta) i cieszę się z tego, co robię. Lubię dogłębnie rozumieć to, co robię, i doprowadzać rzeczy do końca.</0><1>Jestem absolwentem matematyki, co bardzo pomogło mi w zdobywaniu umiejętności programowania.</1><2/><3>Mój pierwszy język programowania, który nauczyłem się, to C# wraz z frameworkiem WinForms. Przez lata miałem okazję pracować z wieloma frameworkami .NET, takimi jak ASP.NET (Core, Razor Pages) czy WPF, Blazor. Nauczyłem się również JS (HTML, CSS, JS) i frameworka React.</3><4>Wciąż staram się uczyć i rozwijać. Ta strona jest ewolucją <0>poprzedniej strony</0>, która jest napisana w React jako SPA (single page application). Ta strona z kolei jest napisana z wykorzystaniem Next.js i korzysta ona z optymalizacji, jaką jest SSR (server side rendering).</4>",
         "previous-employers": "Poprzedni pracodawcy",
         "previous-employers-body": "Przez całą moją karierę pracowałem dla następujących firm:"
+    },
+    "technology-stack": {
+        "theming": "Theming",
+        "theming-description": "Do stylowania strony wykorzystałem bibliotekę TailwindCSS oraz czystego CSSa.",
+        "resources": "Zasoby",
+        "resources-description": "<0>Przy budowie tej strony wykorzystałem dokumentację Next.js oraz <0>tutorial o tej technologii</0>. Bardzo zmagałem się z obsługą wielu języków. Pierwsza wersja strony była napisana na podstawie <1>tego repozytorium</1>. Jednak potem udało mi się w końcu poprawnie zaimplementować wielojęzyczność za pomocą <2>tej dokumentacji</2>. Widget do wyboru języka zostawiłem z wcześniejszej wersji strony, ze wspomnianego repozytorium.</0>"
     }
 }
