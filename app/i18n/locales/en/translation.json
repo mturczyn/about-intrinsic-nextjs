@@ -18,7 +18,7 @@
         "theming-description": "For styling the page, I used the TailwindCSS library along with pure CSS.",
         "resources": "Resources",
         "resources-description": "<0>While building this site, I referenced the Next.js documentation and <0>a tutorial on this technology</0>. I struggled a lot with handling multiple languages. The initial version of the site was based on <1>this repository</1>. However, eventually I managed to implement multilingual support correctly using <2>this documentation</2>. I kept the language selection widget from the previous version of the site, from the mentioned repository.</0>",
-        "hosting": "Hosting, CI/CD, and Repository",
+        "hosting": "Hosting, CI/CD, and repository",
         "hosting-description": "<0>The code for the site is hosted on <0>GitHub repository</0>. The <1>Vercel</1> platform was used for hosting the site - it has excellent support for Next.js, just the GitHub repository needs to be specified, and Vercel platform automatically handles deployment and sets up CI/CD.</0>"
     }
 }
