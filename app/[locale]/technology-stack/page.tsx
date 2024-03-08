@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { locale: Locale } }) {
                 {t('technology-stack.resources')}
             </h1>
             <Trans i18nKey="technology-stack.resources-description">
-                <p className="[&>a]:underline hover:[&>a]:no-underline">
+                <p>
                     <a target="_blank" href="https://nextjs.org/learn"></a>
                     <a
                         target="_blank"
@@ -49,7 +49,7 @@ export default function Page({ params }: { params: { locale: Locale } }) {
                 {t('technology-stack.hosting')}
             </h1>
             <Trans i18nKey="technology-stack.hosting-description">
-                <p className="[&>a]:underline hover:[&>a]:no-underline">
+                <p>
                     <a
                         target="_blank"
                         href="https://github.com/mturczyn/about-intrinsic-nextjs"

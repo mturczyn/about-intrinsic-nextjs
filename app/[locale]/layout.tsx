@@ -46,7 +46,9 @@ export default function RootLayout({
             </head>
             <body>
                 <Nav params={params} />
-                <main className="px-8 lg:px-96">{children}</main>
+                <main className="px-8 lg:px-96 [&_a]:underline [&_a:hover]:no-underline">
+                    {children}
+                </main>
             </body>
         </html>
     )

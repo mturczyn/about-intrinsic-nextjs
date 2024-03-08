@@ -45,7 +45,6 @@ export default function Home({ params }: { params: { locale: Locale } }) {
                     <p></p>
                     <p>
                         <a
-                            className="underline hover:no-underline"
                             href="https://intrinsic-michal-turczyn.azurewebsites.net"
                             target="_blank"
                         ></a>
