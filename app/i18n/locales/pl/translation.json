@@ -17,6 +17,8 @@
         "theming": "Theming",
         "theming-description": "Do stylowania strony wykorzystałem bibliotekę TailwindCSS oraz czystego CSSa.",
         "resources": "Zasoby",
-        "resources-description": "<0>Przy budowie tej strony wykorzystałem dokumentację Next.js oraz <0>tutorial o tej technologii</0>. Bardzo zmagałem się z obsługą wielu języków. Pierwsza wersja strony była napisana na podstawie <1>tego repozytorium</1>. Jednak potem udało mi się w końcu poprawnie zaimplementować wielojęzyczność za pomocą <2>tej dokumentacji</2>. Widget do wyboru języka zostawiłem z wcześniejszej wersji strony, ze wspomnianego repozytorium.</0>"
+        "resources-description": "<0>Przy budowie tej strony wykorzystałem dokumentację Next.js oraz <0>tutorial o tej technologii</0>. Bardzo zmagałem się z obsługą wielu języków. Pierwsza wersja strony była napisana na podstawie <1>tego repozytorium</1>. Jednak potem udało mi się w końcu poprawnie zaimplementować wielojęzyczność za pomocą <2>tej dokumentacji</2>. Widget do wyboru języka zostawiłem z wcześniejszej wersji strony, ze wspomnianego repozytorium.</0>",
+        "hosting": "Hostowanie, CI/CD oraz repozytorium",
+        "hosting-description": "<0>Kod strony znajduje się na <0>repozytorium GitHub</0>. Platforma <1>Vercel</1> została wykorzystana do hostowania strony - ma ona bardzo dobre wsparcie Next.js, wystarczy wskazać repozytorium GitHub, natomaist platofrma Vercel automatycznie robi deployment oraz ustawia mechanizm CI/CD.</0>"
     }
 }
