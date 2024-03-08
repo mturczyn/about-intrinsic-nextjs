@@ -2,6 +2,16 @@
 
 This project has docker enabled - it contains all docker scripts (`Dockerfile` and `docker-compose`) to run this application as docker container.
 
+# Static assets
+
+In order to serve static assets, files have to be put in `public` directory of the project. During build process, they will be picked up and served as usual.
+
+One caveat is that we have locale (language) parameter in URL and custom middleware to handle that, which breaks routing for static files. So the name of the file needs to be included in URL pattern for the middleware to match (so custom middleware excludes route for the static file - see `middleware.ts` file).
+
+# Search Engine Optimization
+
+In order for the page to be indexed by Google, there are common steps (add `robots.txt` file, correctly create `manifest.json` file, icons - correct sizes, maskable icon, etc.). Also, we need to request indexing from google by going to Search Console. One way of doing that is to search `site:[URL of the page]` in google to see, if it has been indexed yet (and if not, there's link to help doing that).
+
 # Standard README for Next.js project
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
