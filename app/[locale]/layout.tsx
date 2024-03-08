@@ -26,7 +26,7 @@ export default function RootLayout({
         <html lang={params.locale} className={inter.className}>
             <body>
                 <Nav params={params} />
-                <main className="px-8 pt-16 lg:px-96">{children}</main>
+                <main className="px-8 lg:px-96">{children}</main>
             </body>
         </html>
     )
