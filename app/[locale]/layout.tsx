@@ -24,6 +24,26 @@ export default function RootLayout({
 }>) {
     return (
         <html lang={params.locale} className={inter.className}>
+            <head>
+                <meta charSet="utf-8" />
+                <link type="text/plain" rel="author" href="humans.txt" />
+                <link rel="icon" href="favicon.ico" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <meta name="theme-color" content="#FFFFFF" />
+                <meta
+                    name="description"
+                    content="Intrinsic Michał Turczyn - programowanie, rozwój stron internetowych, rozwiązania w chmurze. C#, .NET, JS, React oraz Azure."
+                />
+                {/* <meta
+                    http-equiv="content-security-policy"
+                    content="default-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+                /> */}
+                <link rel="apple-touch-icon" href="logo192.png" />
+                <link rel="manifest" href="manifest.json" />
+            </head>
             <body>
                 <Nav params={params} />
                 <main className="px-8 lg:px-96">{children}</main>
