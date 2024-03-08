@@ -23,6 +23,7 @@ export default async function Page({ params }: { params: { locale: Locale } }) {
     return (
         <header className="contact-card">
             <Image
+                loading="eager"
                 src={websiteLogo}
                 alt="Intrinsic Michał Turczyn logo"
             ></Image>
