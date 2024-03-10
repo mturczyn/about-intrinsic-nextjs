@@ -7,5 +7,5 @@ caches.open(cacheName).then((cache) => {
 
 // RespondWith must be called synchronously, but it accepts Promise resolving to Response object.
 self.addEventListener('fetch', (e) => {
-    e.respondWith(fetch(e).catch(() => caches.match(offlinePage)))
+    e.respondWith(fetch(e.request).catch(() => caches.match(offlinePage)))
 })
