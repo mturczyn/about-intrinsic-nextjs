@@ -19,6 +19,10 @@
         "resources": "Resources",
         "resources-description": "<0>While building this site, I referenced the Next.js documentation and <0>a tutorial on this technology</0>. I struggled a lot with handling multiple languages. The initial version of the site was based on <1>this repository</1>. However, eventually I managed to implement multilingual support correctly using <2>this documentation</2>. I kept the language selection widget from the previous version of the site, from the mentioned repository.</0>",
         "hosting": "Hosting, CI/CD, and repository",
-        "hosting-description": "<0>The code for the site is hosted on <0>GitHub repository</0>. The <1>Vercel</1> platform was used for hosting the site - it has excellent support for Next.js, just the GitHub repository needs to be specified, and Vercel platform automatically handles deployment and sets up CI/CD.</0>"
+        "hosting-description": "<0>The code for the site is hosted on <0>GitHub repository</0>. The <1>Vercel</1> platform was used for hosting the site - it has excellent support for Next.js, just the GitHub repository needs to be specified, and Vercel platform automatically handles deployment and sets up CI/CD.</0>",
+        "pwa-service-workers": "PWA and service workers",
+        "pwa-service-workers-description": "By specifying manifest file for the webpage correctly, I have enabled this page to work as PWA (so it is installable as application). Moreover, I have added custom offline page (when user is offline, or page is unavailable), using service workers.",
+        "pwa-workshop": "PWA workshop",
+        "pwa-workshop-description": "<0>I have also launched <0>PWA website</0> with code based on <1>this tutorial</1>, which was about implementing and enhancing PWA website, which was simple markdown editor with possibility to open and save files, with live preview. The page, however, works correctly only on PCs.</0>"
     }
 }

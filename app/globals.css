@@ -6,7 +6,7 @@
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
-    --shadow-def: 0px 0px 15px rgb(255, 196, 0);
+    --shadow-def: 0px 0px 15px rgb(40, 40, 40);
 }
 
 /* @media (prefers-color-scheme: dark) {

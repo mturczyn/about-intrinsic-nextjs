@@ -60,6 +60,29 @@ export default function Page({ params }: { params: { locale: Locale } }) {
                     ></a>
                 </p>
             </Trans>
+
+            <h1 className="text-3xl font-medium tracking-tight">
+                {t('technology-stack.pwa-service-workers')}
+            </h1>
+            <p>{t('technology-stack.pwa-service-workers-description')}</p>
+
+            <h1 className="text-2xl font-medium tracking-tight">
+                {t('technology-stack.pwa-workshop')}
+            </h1>
+            <Trans i18nKey="technology-stack.pwa-workshop-description">
+                <p>
+                    <a
+                        rel="noreferrer"
+                        href="https://pwa-workshop-codelab.vercel.app"
+                        target="_blank"
+                    ></a>
+                    <a
+                        rel="noreferrer"
+                        href="https://web.dev/articles/new-pwa-training"
+                        target="_blank"
+                    ></a>
+                </p>
+            </Trans>
         </div>
     )
 }
