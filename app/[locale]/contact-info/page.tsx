@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { locale: Locale } }) {
                     <a href={`mailto:${MAIL_ADDRESS}`}>{MAIL_ADDRESS}</a>
                 </ContactInfoEntry>
                 <ContactInfoEntry icon={<CiLocationOn />}>
-                    Zabrze, {t('Poland')}
+                    Zabrze, {t('contact.poland')}
                 </ContactInfoEntry>
                 <ContactInfoEntry icon={<CiLinkedin />}>
                     <AnchorWithNewPage

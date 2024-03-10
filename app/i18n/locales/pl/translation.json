@@ -13,6 +13,9 @@
         "previous-employers": "Poprzedni pracodawcy",
         "previous-employers-body": "Przez całą moją karierę pracowałem dla następujących firm:"
     },
+    "contact": {
+        "poland": "Polska"
+    },
     "technology-stack": {
         "theming": "Motywy",
         "theming-description": "Do stylowania strony wykorzystałem bibliotekę TailwindCSS oraz czystego CSSa.",
