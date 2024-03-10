@@ -1,22 +1,20 @@
-'use client'
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../globals.css'
 import Nav from '@/components/nav'
-import { useEffect } from 'react'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export const metadata: Metadata = {
-//     title: {
-//         template: '%s | Intrinsic Michal Turczyn',
-//         default: 'Intrinsic Michal Turczyn',
-//     },
-//     description:
-//         'Programowanie, tworzenie stron internetowych - Intrinsic, Michał Turczyn',
-//     metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
-// }
+export const metadata: Metadata = {
+    title: {
+        template: '%s | Intrinsic Michal Turczyn',
+        default: 'Intrinsic Michal Turczyn',
+    },
+    description:
+        'Programowanie, tworzenie stron internetowych - Intrinsic, Michał Turczyn',
+    metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+}
 
 export default function RootLayout({
     children,
@@ -25,19 +23,16 @@ export default function RootLayout({
     children: React.ReactNode
     params: { locale: string }
 }>) {
-    useEffect(() => {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('/service-worker.js')
-                .then((registration) =>
-                    console.log('scope is: ', registration.scope)
-                )
-        }
-    }, [])
-
     return (
         <html lang={params.locale} className={inter.className}>
             <head>
+                <Script id="register-service-worker">
+                    {`if ('serviceWorker' in navigator) {
+                        navigator.serviceWorker
+                            .register('/service-worker.js')
+                            .then((registration) => console.log('scope is: ', registration.scope))
+                    }`}
+                </Script>
                 <meta charSet="utf-8" />
                 <link type="text/plain" rel="author" href="humans.txt" />
                 <link rel="icon" href="favicon.ico" />
