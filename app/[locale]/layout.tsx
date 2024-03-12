@@ -26,13 +26,6 @@ export default function RootLayout({
     return (
         <html lang={params.locale} className={inter.className}>
             <head>
-                <Script id="register-service-worker">
-                    {`if ('serviceWorker' in navigator) {
-                        navigator.serviceWorker
-                            .register('/service-worker.js')
-                            .then((registration) => console.log('scope is: ', registration.scope))
-                    }`}
-                </Script>
                 <meta charSet="utf-8" />
                 <link type="text/plain" rel="author" href="humans.txt" />
                 <link rel="icon" href="favicon.ico" />
