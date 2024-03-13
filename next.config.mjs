@@ -4,6 +4,7 @@ import withPWAInit from '@serwist/next'
 const withPWA = withPWAInit({
     swSrc: 'app/service-worker.ts',
     swDest: 'public/service-worker.js',
+    swUrl: '/service-worker.js',
 })
 
 const nextConfig = { output: 'standalone' }
