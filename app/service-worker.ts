@@ -1,6 +1,6 @@
 // import { defaultCache } from '@serwist/next/browser'
 import type { PrecacheEntry } from '@serwist/precaching'
-// import { installSerwist } from '@serwist/sw'
+import { installSerwist } from '@serwist/sw'
 
 declare const self: ServiceWorkerGlobalScope & {
     // Change this attribute's name to your `injectionPoint`.
@@ -18,6 +18,10 @@ declare const self: ServiceWorkerGlobalScope & {
 //     navigationPreload: true,
 //     runtimeCaching: defaultCache,
 // })
+
+installSerwist({
+    precacheEntries: self.__SW_MANIFEST,
+})
 
 const cacheName = 'about-intrinsic-nextjs'
 const offlinePage = 'offline.html'
