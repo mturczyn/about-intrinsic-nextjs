@@ -66,6 +66,21 @@ export default function Page({ params }: { params: { locale: Locale } }) {
             </h1>
             <p>{t('technology-stack.pwa-service-workers-description')}</p>
 
+            <Trans i18nKey="technology-stack.pwa-service-workers-serwist-description">
+                <p>
+                    <a
+                        href="https://serwist.pages.dev"
+                        rel="noopener"
+                        target="_blank"
+                    ></a>
+                    <a
+                        href="https://github.com/serwist/serwist"
+                        rel="noopener"
+                        target="_blank"
+                    ></a>
+                </p>
+            </Trans>
+
             <h1 className="text-2xl font-medium tracking-tight">
                 {t('technology-stack.pwa-workshop')}
             </h1>
