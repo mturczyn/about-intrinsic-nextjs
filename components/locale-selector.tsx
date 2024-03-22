@@ -4,7 +4,7 @@ import redirectToLocale from '@/app/i18n'
 import { Locale, languages } from '@/app/i18n/settings'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 interface Props {
     message: string
@@ -22,13 +22,25 @@ export default function LocaleSelector({ message }: Props) {
         pl: { native: 'Polski', english: 'Polish' },
     }
 
+    const closeSelector = useCallback(() => {
+        setIsOpen(false)
+    }, [setIsOpen])
+
+    useEffect(() => {
+        window.addEventListener('click', closeSelector)
+        return () => window.removeEventListener('click', closeSelector)
+    }, [closeSelector])
+
     return (
         <div style={{ marginLeft: 'auto' }} className="relative">
             <button
                 className={`transition-colors duration-1000 flex h-12 w-12 items-center justify-center rounded-lg hover:bg-neutral-200 ${
                     isOpen ? 'bg-neutral-100' : ''
                 } `}
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={(e) => {
+                    setIsOpen(!isOpen)
+                    e.stopPropagation()
+                }}
             >
                 <GlobeIcon />
             </button>

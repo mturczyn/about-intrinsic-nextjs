@@ -11,8 +11,12 @@ declare const self: ServiceWorkerGlobalScope & {
 
 // It enables powerful features of auto caching vast amount of data
 // to enhance performance on client side.
+// * precacheEntries is typed with spave after the dot in
+//      order to prevent errors - webpack
+//      for some reason treats is as valid declaration.
+//      https://github.com/quasarframework/quasar/issues/8486#issuecomment-900982267
 // installSerwist({
-//     precacheEntries: self.__SW_MANIFEST,
+//     precacheEntries: self. __SW_MANIFEST,
 //     skipWaiting: true,
 //     clientsClaim: true,
 //     navigationPreload: true,
