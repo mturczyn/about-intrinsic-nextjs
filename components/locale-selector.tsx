@@ -32,7 +32,7 @@ export default function LocaleSelector({ message }: Props) {
     }, [closeSelector])
 
     return (
-        <div style={{ marginLeft: 'auto' }} className="relative">
+        <div className="self-center relative ml-auto">
             <button
                 className={`transition-colors duration-1000 flex h-12 w-12 items-center justify-center rounded-lg hover:bg-neutral-200 ${
                     isOpen ? 'bg-neutral-100' : ''
