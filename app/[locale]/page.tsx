@@ -48,6 +48,10 @@ export default function Home({ params }: { params: { locale: Locale } }) {
                             href="https://intrinsic-michal-turczyn.azurewebsites.net"
                             target="_blank"
                         ></a>
+                        <a
+                            href="https://intrinsic-michal-turczyn.turek1992.workers.dev"
+                            target="_blank"
+                        ></a>
                     </p>
                 </Trans>
             </div>
