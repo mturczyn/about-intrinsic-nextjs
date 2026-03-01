@@ -1,7 +1,7 @@
-import * as serwist from '@serwist/turbopack'
+import { withSerwist } from '@serwist/turbopack'
 
 /** @type {import('next').NextConfig} */
-export default serwist.withSerwist({
+export default withSerwist({
     swSrc: 'app/service-worker.ts',
     swDest: 'public/service-worker.js',
     swUrl: '/service-worker.js',
