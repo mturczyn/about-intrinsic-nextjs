@@ -5,13 +5,20 @@ import { Locale } from '@/app/i18n/settings'
 import { Trans } from 'next-i18next'
 import Image from 'next/image'
 import nextJsLogo from '../../../public/programming-languages-logo/next-js.svg'
+import { use } from 'react'
 
 // export const metadata: Metadata = {
 //     title: 'Stack technologiczny',
 // }
 
-export default function Page({ params }: { params: { locale: Locale } }) {
-    const { t } = useTranslation(params.locale)
+export default function Page({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>
+}) {
+    const { locale } = use(params)
+
+    const { t } = useTranslation(locale)
 
     return (
         <div className="[&>p]:mx-5 [&>h1]:m-5">

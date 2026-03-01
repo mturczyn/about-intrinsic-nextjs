@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../globals.css'
 import Nav from '@/components/nav'
-import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,15 +15,16 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 }
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
     params,
 }: Readonly<{
     children: React.ReactNode
-    params: { locale: string }
+    params: Promise<{ locale: string }>
 }>) {
+    const { locale } = await params
     return (
-        <html lang={params.locale} className={inter.className}>
+        <html lang={locale} className={inter.className}>
             <head>
                 <meta charSet="utf-8" />
                 <link type="text/plain" rel="author" href="humans.txt" />
@@ -46,7 +46,7 @@ export default function RootLayout({
                 <link rel="manifest" href="manifest.json" />
             </head>
             <body>
-                <Nav params={params} />
+                <Nav params={{ locale }} />
                 <main className="px-8 lg:px-96 [&_a]:underline [&_a:hover]:no-underline">
                     {children}
                 </main>

@@ -13,12 +13,19 @@ import rsm from '../../public/employers-logos/rsm.png'
 import cSharpLogo from '../../public/programming-languages-logo/c-sharp.png'
 import jsLogo from '../../public/programming-languages-logo/js-logo.webp'
 import nextJsLogo from '../../public/programming-languages-logo/next-js.svg'
-import { useEffect } from 'react'
+import { use, useEffect } from 'react'
+import { CookiesProvider } from 'react-cookie'
 
 const PAGE_TITLE = 'Główna'
 
-export default function Home({ params }: { params: { locale: Locale } }) {
-    const { t } = useTranslation(params.locale)
+export default function Home({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>
+}) {
+    const { locale } = use(params)
+
+    const { t } = useTranslation(locale)
 
     useEffect(() => {
         document.title = `${PAGE_TITLE} | Intrinsic Michal Turczyn`

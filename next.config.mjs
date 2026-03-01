@@ -1,12 +1,9 @@
-import withPWAInit from '@serwist/next'
+import * as serwist from '@serwist/turbopack'
 
 /** @type {import('next').NextConfig} */
-const withPWA = withPWAInit({
+export default serwist.withSerwist({
     swSrc: 'app/service-worker.ts',
     swDest: 'public/service-worker.js',
     swUrl: '/service-worker.js',
+    output: 'standalone',
 })
-
-const nextConfig = { output: 'standalone' }
-
-export default withPWA(nextConfig)

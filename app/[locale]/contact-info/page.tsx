@@ -9,6 +9,7 @@ import { BsTelephone } from 'react-icons/bs'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaGithub } from 'react-icons/fa'
 import websiteLogo from '../../../public/website-logo.svg'
+import { PropsWithChildren } from 'react'
 
 const PHONE_NUMBER = '503 536 506'
 const MAIL_ADDRESS = 'turek1992@o2.pl'
@@ -80,9 +81,8 @@ const AnchorWithNewPage = ({
 const ContactInfoEntry = ({
     children,
     icon,
-}: {
-    children: any
-    icon: JSX.Element
+}: PropsWithChildren & {
+    icon: React.ReactNode
 }) => {
     return (
         <div>
