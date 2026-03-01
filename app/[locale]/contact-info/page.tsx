@@ -18,8 +18,13 @@ export const metadata: Metadata = {
     title: 'Kontakt',
 }
 
-export default async function Page({ params }: { params: { locale: Locale } }) {
-    const { t } = await useTranslation(params.locale)
+export default async function Page({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>
+}) {
+    const { locale } = await params
+    const { t } = await useTranslation(locale)
 
     return (
         <header className="contact-card">
