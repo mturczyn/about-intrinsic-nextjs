@@ -14,7 +14,10 @@
         "previous-employers-body": "Throughout my career, I have worked for the following companies:"
     },
     "contact": {
-        "poland": "Poland"
+        "recaptchaFailedAccessDenied": "Access denied (reCAPTCHA verification failed)",
+        "poland": "Poland",
+        "contactInfoUnavailable": "Contact information is currently unavailable. Please try again later.",
+        "loadingContactInformation": "Loading contact information..."
     },
     "technology-stack": {
         "theming": "Theming",

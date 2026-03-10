@@ -14,7 +14,6 @@ import cSharpLogo from '../../public/programming-languages-logo/c-sharp.png'
 import jsLogo from '../../public/programming-languages-logo/js-logo.webp'
 import nextJsLogo from '../../public/programming-languages-logo/next-js.svg'
 import { use, useEffect } from 'react'
-import { CookiesProvider } from 'react-cookie'
 
 const PAGE_TITLE = 'Główna'
 
@@ -42,7 +41,7 @@ export default function Home({
                 loading="eager"
             ></Image>
             <h1 className="text-4xl font-medium tracking-tight m-5">
-                {t('home.title')}
+                <Trans i18nKey="home.title"></Trans>
             </h1>
             <div className="[&>p]:m-5">
                 <Trans i18nKey={'home.body'}>
@@ -64,9 +63,11 @@ export default function Home({
             </div>
 
             <h1 className="text-4xl font-medium tracking-tight m-5">
-                {t('home.previous-employers')}
+                <Trans i18nKey="home.previous-employers" />
             </h1>
-            <p className="m-5">{t('home.previous-employers-body')}</p>
+            <p className="m-5">
+                <Trans i18nKey="home.previous-employers-body" />
+            </p>
 
             <div className="logos">
                 <EmployersLogos />
