@@ -15,6 +15,7 @@
         "@serwist/precaching": "^9.5.6",
         "@serwist/sw": "^9.5.6",
         "@serwist/turbopack": "^9.5.6",
+        "@tanstack/react-query": "^5.90.21",
         "accept-language": "^3.0.20",
         "i18next": "^25.8.13",
         "i18next-browser-languagedetector": "^8.2.1",

@@ -24,7 +24,9 @@ export async function verifyRecaptchaTokenCore(recaptchaToken: string) {
             body: params,
         }
     )
-    const { success, score } = await verifyRes.json()
+    const { success, score, ...rest } = await verifyRes.json()
+
+    console.log('reCAPTCHA verification response:', { success, score, ...rest })
 
     const minScore = parseFloat(process.env.RECAPTCHA_MIN_SCORE || '0.7')
 

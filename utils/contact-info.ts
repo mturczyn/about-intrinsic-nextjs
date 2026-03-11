@@ -12,15 +12,21 @@ export async function getContactInformation(recaptchaToken: string) {
     const success = await verifyRecaptchaTokenCore(recaptchaToken)
 
     if (!success) {
-        throw new Error('reCAPTCHA verification failed')
+        return {
+            recaptchaSuccess: false,
+        }
     }
 
     // Return contact information
     return {
-        phoneNumber: '+48 503 536 506',
-        email: 'turek1992@o2.pl',
-        linkedIn: 'https://www.linkedin.com/in/michał-turczyn-6851a2117/',
-        stackOverflow: 'https://stackoverflow.com/users/7132550/michał-turczyn',
-        github: 'https://github.com/mturczyn',
+        recaptchaSuccess: true,
+        contactInformation: {
+            phoneNumber: '+48 503 536 506',
+            email: 'turek1992@o2.pl',
+            linkedIn: 'https://www.linkedin.com/in/michał-turczyn-6851a2117/',
+            stackOverflow:
+                'https://stackoverflow.com/users/7132550/michał-turczyn',
+            github: 'https://github.com/mturczyn',
+        },
     }
 }

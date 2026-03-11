@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../globals.css'
 import Nav from '@/components/nav'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Providers } from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -46,10 +48,12 @@ export default async function RootLayout({
                 <link rel="manifest" href="manifest.json" />
             </head>
             <body>
-                <Nav params={{ locale }} />
-                <main className="px-8 lg:px-96 [&_a]:underline [&_a:hover]:no-underline">
-                    {children}
-                </main>
+                <Providers>
+                    <Nav params={{ locale }} />
+                    <main className="px-8 lg:px-96 [&_a]:underline [&_a:hover]:no-underline">
+                        {children}
+                    </main>
+                </Providers>
             </body>
         </html>
     )
