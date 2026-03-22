@@ -2,8 +2,12 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../globals.css'
 import Nav from '@/components/nav'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Providers } from '@/components/Providers'
+import { languages } from '../i18n/settings'
+
+export async function generateStaticParams() {
+    return languages.map((locale) => ({ locale }))
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
