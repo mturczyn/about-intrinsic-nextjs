@@ -10,7 +10,7 @@ import { BsTelephone } from 'react-icons/bs'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaGithub } from 'react-icons/fa'
 import websiteLogo from '../../../public/website-logo.svg'
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { PropsWithChildren, use, useEffect, useState } from 'react'
 import { getRecaptchaToken } from '@/utils/recaptcha.client'
 import { getContactInformation } from '@/utils/contact-info'
 import { Trans } from 'next-i18next'
@@ -22,15 +22,8 @@ export default function Page({
 }: {
     params: Promise<{ locale: Locale }>
 }) {
-    const [locale, setLocale] = useState<Locale | null>(null)
-    useTranslation(locale || 'en')
-
-    useEffect(() => {
-        // Get locale from params
-        params.then(({ locale }) => {
-            setLocale(locale)
-        })
-    }, [params])
+    const { locale } = use(params)
+    useTranslation(locale)
 
     const { data: contactInfo, isLoading } = useQuery({
         queryKey: ['contact-info'],

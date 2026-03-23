@@ -17,7 +17,6 @@ export default function Page({
     params: Promise<{ locale: Locale }>
 }) {
     const { locale } = use(params)
-
     useTranslation(locale)
 
     return (

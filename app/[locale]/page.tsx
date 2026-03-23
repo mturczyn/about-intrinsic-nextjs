@@ -24,11 +24,11 @@ export default function Home({
 }) {
     const { locale } = use(params)
 
-    const { t } = useTranslation(locale)
+    useTranslation(locale)
 
     useEffect(() => {
         document.title = `${PAGE_TITLE} | Intrinsic Michal Turczyn`
-    }, [t])
+    }, [])
 
     return (
         <>
