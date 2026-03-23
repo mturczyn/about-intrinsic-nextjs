@@ -6,9 +6,13 @@ export default async function Nav({ params }: { params: { locale: string } }) {
     const { t } = await useTranslation(params.locale)
     return (
         <nav className="[&>a]:flex [&>a]:items-center sticky top-0 flex w-full items-stretch border-b border-b-neutral-200 bg-white px-8 lg:px-96 [&>a]:rounded-lg [&>a:hover]:bg-neutral-200 [&>a]:p-3 [&>a]:transition-colors [&>a]:duration-1000 [&>a]:my-1">
-            <Link href="/">{t('nav.home')}</Link>
-            <Link href="/contact-info">{t('nav.contact-info')}</Link>
-            <Link href="/technology-stack">{t('nav.technology-stack')}</Link>
+            <Link href={`/${params.locale}`}>{t('nav.home')}</Link>
+            <Link href={`/${params.locale}/contact-info`}>
+                {t('nav.contact-info')}
+            </Link>
+            <Link href={`/${params.locale}/technology-stack`}>
+                {t('nav.technology-stack')}
+            </Link>
             <LocaleSelector message={t('locale-selector.message')} />
         </nav>
     )
