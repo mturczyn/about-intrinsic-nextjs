@@ -10,6 +10,7 @@ import {
 import resourcesToBackend from 'i18next-resources-to-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { getOptions, languages, cookieName, Locale } from './settings'
+import { useCookies } from 'react-cookie'
 
 const runsOnServerSide = typeof window === 'undefined'
 
@@ -55,11 +56,13 @@ export function useTranslation(
             if (!lng || i18n.resolvedLanguage === lng) return
             i18n.changeLanguage(lng)
         }, [lng, i18n])
+
+        const [cookies, set] = useCookies<string>()
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        // useEffect(() => {
-        //     if (cookies.i18next === lng) return
-        //     setCookie(cookieName, lng, { path: '/' })
-        // }, [lng, cookies.i18next])
+        useEffect(() => {
+            if (cookies[cookieName] === lng) return
+            set(cookieName, lng, { path: '/' })
+        }, [lng])
     }
     return ret
 }
