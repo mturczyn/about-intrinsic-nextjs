@@ -18,7 +18,7 @@ export default function Page({
 }) {
     const { locale } = use(params)
 
-    const { t } = useTranslation(locale)
+    useTranslation(locale)
 
     return (
         <div className="[&>p]:mx-5 [&>h1]:m-5">
@@ -31,12 +31,14 @@ export default function Page({
                 loading="eager"
             ></Image>
             <h1 className="text-3xl font-medium tracking-tight">
-                {t('technology-stack.theming')}
+                <Trans i18nKey="technology-stack.theming" />
             </h1>
-            <p>{t('technology-stack.theming-description')}</p>
+            <p>
+                <Trans i18nKey="technology-stack.theming-description" />
+            </p>
 
             <h1 className="text-3xl font-medium tracking-tight">
-                {t('technology-stack.resources')}
+                <Trans i18nKey="technology-stack.resources" />
             </h1>
             <Trans i18nKey="technology-stack.resources-description">
                 <p>
@@ -53,7 +55,7 @@ export default function Page({
             </Trans>
 
             <h1 className="text-3xl font-medium tracking-tight">
-                {t('technology-stack.hosting')}
+                <Trans i18nKey="technology-stack.hosting" />
             </h1>
             <Trans i18nKey="technology-stack.hosting-description">
                 <p>
@@ -69,9 +71,11 @@ export default function Page({
             </Trans>
 
             <h1 className="text-3xl font-medium tracking-tight">
-                {t('technology-stack.pwa-service-workers')}
+                <Trans i18nKey="technology-stack.pwa-service-workers" />
             </h1>
-            <p>{t('technology-stack.pwa-service-workers-description')}</p>
+            <p>
+                <Trans i18nKey="technology-stack.pwa-service-workers-description" />
+            </p>
 
             <Trans i18nKey="technology-stack.pwa-service-workers-serwist-description">
                 <p>
@@ -89,7 +93,7 @@ export default function Page({
             </Trans>
 
             <h1 className="text-2xl font-medium tracking-tight">
-                {t('technology-stack.pwa-workshop')}
+                <Trans i18nKey="technology-stack.pwa-workshop" />
             </h1>
             <Trans i18nKey="technology-stack.pwa-workshop-description">
                 <p>
