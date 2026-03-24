@@ -8,6 +8,10 @@ export type Locale = (typeof languages)[number]
 const i18nConfig: I18nConfig = {
     supportedLngs: languages,
     fallbackLng: plLang,
+    resourceLoader: (language, namespace) =>
+        import(`./app/i18n/locales/${language}/common.json`).then(
+            (module) => module.default
+        ),
 }
 
 export default i18nConfig
