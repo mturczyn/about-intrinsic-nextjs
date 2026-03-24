@@ -4,12 +4,17 @@ import '../globals.css'
 import Nav from '@/components/nav'
 import { Providers } from '@/components/Providers'
 import i18nConfig, { languages } from '@/i18n.config'
-import { getResources, getT, initServerI18next } from 'next-i18next/server'
+import {
+    generateI18nStaticParams,
+    getResources,
+    getT,
+    initServerI18next,
+} from 'next-i18next/server'
 
 initServerI18next(i18nConfig)
 
 export async function generateStaticParams() {
-    return languages.map((locale) => ({ locale }))
+    return generateI18nStaticParams().map(({ lng }) => ({ locale: lng }))
 }
 
 const inter = Inter({ subsets: ['latin'] })
