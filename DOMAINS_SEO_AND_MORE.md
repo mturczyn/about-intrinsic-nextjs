@@ -9,6 +9,10 @@
 
 In addition, HTTPS enablement lies on Vercel side, it issues SSQL certificates, enabling HTTPS traffic.
 
+### SEO
+
+Page seems to be correctly indexed in Google. To be tracked.
+
 ## Steps to achieve
 
 1. Buy or otherwise get the domain from some domain provider.
