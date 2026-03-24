@@ -1,9 +1,6 @@
 'use client'
 import Image from 'next/image'
 import authorImage from '../../public/author-image.jpg'
-import { Trans } from 'next-i18next'
-import { useTranslation } from '../i18n/client'
-import { Locale } from '../i18n/settings'
 import arcelorMittal from '../../public/employers-logos/arcelormittal.png'
 import flightScope from '../../public/employers-logos/Flightscope.webp'
 import exadel from '../../public/employers-logos/exadel.png'
@@ -14,6 +11,8 @@ import cSharpLogo from '../../public/programming-languages-logo/c-sharp.png'
 import jsLogo from '../../public/programming-languages-logo/js-logo.webp'
 import nextJsLogo from '../../public/programming-languages-logo/next-js.svg'
 import { use, useEffect } from 'react'
+import { Locale } from '@/i18n.config'
+import { Trans, useT } from 'next-i18next/client'
 
 const PAGE_TITLE = 'Główna'
 
@@ -22,9 +21,7 @@ export default function Home({
 }: {
     params: Promise<{ locale: Locale }>
 }) {
-    const { locale } = use(params)
-
-    useTranslation(locale)
+    const { t } = useT()
 
     useEffect(() => {
         document.title = `${PAGE_TITLE} | Intrinsic Michal Turczyn`
@@ -41,10 +38,10 @@ export default function Home({
                 loading="eager"
             ></Image>
             <h1 className="text-4xl font-medium tracking-tight m-5">
-                <Trans i18nKey="home.title"></Trans>
+                <Trans t={t} i18nKey="home.title"></Trans>
             </h1>
             <div className="[&>p]:m-5">
-                <Trans i18nKey={'home.body'}>
+                <Trans t={t} i18nKey={'home.body'}>
                     <p></p>
                     <p></p>
                     <ProgrammingLanguages />
@@ -63,10 +60,10 @@ export default function Home({
             </div>
 
             <h1 className="text-4xl font-medium tracking-tight m-5">
-                <Trans i18nKey="home.previous-employers" />
+                <Trans t={t} i18nKey="home.previous-employers" />
             </h1>
             <p className="m-5">
-                <Trans i18nKey="home.previous-employers-body" />
+                <Trans t={t} i18nKey="home.previous-employers-body" />
             </p>
 
             <div className="logos">

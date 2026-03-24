@@ -1,7 +1,5 @@
 'use client'
 
-import { useTranslation } from '@/app/i18n/client'
-import { Locale } from '@/app/i18n/settings'
 import Image from 'next/image'
 import { MdOutlineEmail } from 'react-icons/md'
 import { CiLinkedin } from 'react-icons/ci'
@@ -10,20 +8,20 @@ import { BsTelephone } from 'react-icons/bs'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaGithub } from 'react-icons/fa'
 import websiteLogo from '../../../public/website-logo.svg'
-import { PropsWithChildren, use, useEffect, useState } from 'react'
+import { PropsWithChildren } from 'react'
 import { getRecaptchaToken } from '@/utils/recaptcha.client'
 import { getContactInformation } from '@/utils/contact-info'
-import { Trans } from 'next-i18next'
 import { BounceLoader } from '@/components/bounce-loader'
 import { useQuery } from '@tanstack/react-query'
+import { Locale } from '@/i18n.config'
+import { Trans, useT } from 'next-i18next/client'
 
 export default function Page({
     params,
 }: {
     params: Promise<{ locale: Locale }>
 }) {
-    const { locale } = use(params)
-    useTranslation(locale)
+    const { t } = useT()
 
     const { data: contactInfo, isLoading } = useQuery({
         queryKey: ['contact-info'],
@@ -42,7 +40,7 @@ export default function Page({
         return (
             <div className="text-center mt-10">
                 <BounceLoader className="m-auto mb-5" />
-                <Trans i18nKey="contact.loadingContactInformation" />
+                <Trans t={t} i18nKey="contact.loadingContactInformation" />
             </div>
         )
     }
@@ -50,7 +48,7 @@ export default function Page({
     if (!contactInfo) {
         return (
             <div className="text-red-600 text-center mt-10">
-                <Trans i18nKey="contact.contactInfoUnavailable" />
+                <Trans t={t} i18nKey="contact.contactInfoUnavailable" />
             </div>
         )
     }
@@ -58,7 +56,7 @@ export default function Page({
     if (!contactInfo.recaptchaSuccess) {
         return (
             <div className="text-red-600 text-center mt-10">
-                <Trans i18nKey="contact.recaptchaFailedAccessDenied" />
+                <Trans t={t} i18nKey="contact.recaptchaFailedAccessDenied" />
             </div>
         )
     }

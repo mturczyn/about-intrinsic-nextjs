@@ -1,11 +1,10 @@
 'use client'
-import { useTranslation } from '@/app/i18n/client'
-import { Locale } from '@/app/i18n/settings'
 // import { Metadata } from 'next'
-import { Trans } from 'next-i18next'
 import Image from 'next/image'
 import nextJsLogo from '../../../public/programming-languages-logo/next-js.svg'
 import { use } from 'react'
+import { Locale } from '@/i18n.config'
+import { Trans, useT } from 'next-i18next/client'
 
 // export const metadata: Metadata = {
 //     title: 'Stack technologiczny',
@@ -16,8 +15,7 @@ export default function Page({
 }: {
     params: Promise<{ locale: Locale }>
 }) {
-    const { locale } = use(params)
-    useTranslation(locale)
+    const { t } = useT()
 
     return (
         <div className="[&>p]:mx-5 [&>h1]:m-5">
@@ -30,16 +28,16 @@ export default function Page({
                 loading="eager"
             ></Image>
             <h1 className="text-3xl font-medium tracking-tight">
-                <Trans i18nKey="technology-stack.theming" />
+                <Trans t={t} i18nKey="technology-stack.theming" />
             </h1>
             <p>
-                <Trans i18nKey="technology-stack.theming-description" />
+                <Trans t={t} i18nKey="technology-stack.theming-description" />
             </p>
 
             <h1 className="text-3xl font-medium tracking-tight">
-                <Trans i18nKey="technology-stack.resources" />
+                <Trans t={t} i18nKey="technology-stack.resources" />
             </h1>
-            <Trans i18nKey="technology-stack.resources-description">
+            <Trans t={t} i18nKey="technology-stack.resources-description">
                 <p>
                     <a target="_blank" href="https://nextjs.org/learn"></a>
                     <a
@@ -54,9 +52,9 @@ export default function Page({
             </Trans>
 
             <h1 className="text-3xl font-medium tracking-tight">
-                <Trans i18nKey="technology-stack.hosting" />
+                <Trans t={t} i18nKey="technology-stack.hosting" />
             </h1>
-            <Trans i18nKey="technology-stack.hosting-description">
+            <Trans t={t} i18nKey="technology-stack.hosting-description">
                 <p>
                     <a
                         target="_blank"
@@ -70,13 +68,19 @@ export default function Page({
             </Trans>
 
             <h1 className="text-3xl font-medium tracking-tight">
-                <Trans i18nKey="technology-stack.pwa-service-workers" />
+                <Trans t={t} i18nKey="technology-stack.pwa-service-workers" />
             </h1>
             <p>
-                <Trans i18nKey="technology-stack.pwa-service-workers-description" />
+                <Trans
+                    t={t}
+                    i18nKey="technology-stack.pwa-service-workers-description"
+                />
             </p>
 
-            <Trans i18nKey="technology-stack.pwa-service-workers-serwist-description">
+            <Trans
+                t={t}
+                i18nKey="technology-stack.pwa-service-workers-serwist-description"
+            >
                 <p>
                     <a
                         href="https://serwist.pages.dev"
@@ -92,9 +96,9 @@ export default function Page({
             </Trans>
 
             <h1 className="text-2xl font-medium tracking-tight">
-                <Trans i18nKey="technology-stack.pwa-workshop" />
+                <Trans t={t} i18nKey="technology-stack.pwa-workshop" />
             </h1>
-            <Trans i18nKey="technology-stack.pwa-workshop-description">
+            <Trans t={t} i18nKey="technology-stack.pwa-workshop-description">
                 <p>
                     <a
                         rel="noreferrer"

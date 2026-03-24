@@ -1,9 +1,8 @@
 'use client'
 
-import redirectToLocale from '@/app/i18n'
-import { Locale, languages } from '@/app/i18n/settings'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { languages, Locale } from '@/i18n.config'
+import { useChangeLanguage } from 'next-i18next/client'
+import { usePathname, useRouter } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 
 interface Props {
@@ -12,9 +11,11 @@ interface Props {
 
 export default function LocaleSelector({ message }: Props) {
     const [isOpen, setIsOpen] = useState<boolean>(false)
+    const changeLanguage = useChangeLanguage()
     const pathname = usePathname()
+    const router = useRouter()
 
-    const localeInfo = {
+    const localeInfo: Record<Locale, { native: string; english: string }> = {
         en: {
             native: 'English',
             english: 'English',
@@ -30,6 +31,14 @@ export default function LocaleSelector({ message }: Props) {
         window.addEventListener('click', closeSelector)
         return () => window.removeEventListener('click', closeSelector)
     }, [closeSelector])
+
+    const switchLocale = (locale: Locale) => {
+        changeLanguage(locale)
+        const segments = pathname.split('/')
+        segments[1] = locale
+        router.push(segments.join('/'))
+        router.refresh()
+    }
 
     return (
         <div className="self-center relative ml-auto">
@@ -54,12 +63,9 @@ export default function LocaleSelector({ message }: Props) {
                         <ul className="flex w-full flex-col divide-y divide-neutral-200">
                             {languages.map((locale: Locale, index: number) => {
                                 return (
-                                    <Link
+                                    <button
                                         key={index}
-                                        href={redirectToLocale(
-                                            locale,
-                                            pathname
-                                        )}
+                                        onClick={() => switchLocale(locale)}
                                     >
                                         <li className="flex w-full flex-col items-start justify-center px-3 py-1 hover:bg-neutral-100">
                                             <h2 className="text-md font-medium text-neutral-950">
@@ -69,7 +75,7 @@ export default function LocaleSelector({ message }: Props) {
                                                 {localeInfo[locale].english}
                                             </p>
                                         </li>
-                                    </Link>
+                                    </button>
                                 )
                             })}
                         </ul>

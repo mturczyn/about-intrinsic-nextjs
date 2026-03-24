@@ -3,10 +3,18 @@ import { Inter } from 'next/font/google'
 import '../globals.css'
 import Nav from '@/components/nav'
 import { Providers } from '@/components/Providers'
-import { languages } from '../i18n/settings'
+import i18nConfig from '@/i18n.config'
+import {
+    generateI18nStaticParams,
+    getResources,
+    getT,
+    initServerI18next,
+} from 'next-i18next/server'
+
+initServerI18next(i18nConfig)
 
 export async function generateStaticParams() {
-    return languages.map((locale) => ({ locale }))
+    return generateI18nStaticParams()
 }
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,6 +37,9 @@ export default async function RootLayout({
     params: Promise<{ locale: string }>
 }>) {
     const { locale } = await params
+    const { i18n } = await getT()
+    const resources = getResources(i18n)
+
     return (
         <html lang={locale} className={inter.className}>
             <head>
@@ -52,7 +63,7 @@ export default async function RootLayout({
                 <link rel="manifest" href="manifest.json" />
             </head>
             <body>
-                <Providers>
+                <Providers language={locale} resources={resources}>
                     <Nav params={{ locale }} />
                     <main className="px-8 lg:px-96 [&_a]:underline [&_a:hover]:no-underline">
                         {children}
