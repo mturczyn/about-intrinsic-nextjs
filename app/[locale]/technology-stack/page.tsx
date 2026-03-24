@@ -2,7 +2,6 @@
 // import { Metadata } from 'next'
 import Image from 'next/image'
 import nextJsLogo from '../../../public/programming-languages-logo/next-js.svg'
-import { use } from 'react'
 import { Locale } from '@/i18n.config'
 import { Trans, useT } from 'next-i18next/client'
 

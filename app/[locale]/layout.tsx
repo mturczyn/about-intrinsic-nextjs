@@ -3,18 +3,13 @@ import { Inter } from 'next/font/google'
 import '../globals.css'
 import Nav from '@/components/nav'
 import { Providers } from '@/components/Providers'
-import i18nConfig from '@/i18n.config'
-import {
-    generateI18nStaticParams,
-    getResources,
-    getT,
-    initServerI18next,
-} from 'next-i18next/server'
+import i18nConfig, { languages } from '@/i18n.config'
+import { getResources, getT, initServerI18next } from 'next-i18next/server'
 
 initServerI18next(i18nConfig)
 
 export async function generateStaticParams() {
-    return generateI18nStaticParams()
+    return languages.map((locale) => ({ locale }))
 }
 
 const inter = Inter({ subsets: ['latin'] })

@@ -10,7 +10,7 @@ import rsm from '../../public/employers-logos/rsm.png'
 import cSharpLogo from '../../public/programming-languages-logo/c-sharp.png'
 import jsLogo from '../../public/programming-languages-logo/js-logo.webp'
 import nextJsLogo from '../../public/programming-languages-logo/next-js.svg'
-import { use, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Locale } from '@/i18n.config'
 import { Trans, useT } from 'next-i18next/client'
 
