@@ -65,7 +65,7 @@ export default async function RootLayout({
             <body>
                 <Providers language={locale} resources={resources}>
                     <Nav params={{ locale }} />
-                    <main className="px-8 lg:px-96 [&_a]:underline [&_a:hover]:no-underline">
+                    <main className="max-w-[min(60ch,100%)] mr-auto ml-auto [&_a]:underline [&_a:hover]:no-underline">
                         {children}
                     </main>
                 </Providers>

@@ -5,15 +5,17 @@ import { getT } from 'next-i18next/server'
 export default async function Nav({ params }: { params: { locale: string } }) {
     const { t } = await getT()
     return (
-        <nav className="[&>a]:flex [&>a]:items-center sticky top-0 flex w-full items-stretch border-b border-b-neutral-200 bg-white px-8 lg:px-96 [&>a]:rounded-lg [&>a:hover]:bg-neutral-200 [&>a]:p-3 [&>a]:transition-colors [&>a]:duration-1000 [&>a]:my-1">
-            <Link href={`/${params.locale}`}>{t('nav.home')}</Link>
-            <Link href={`/${params.locale}/contact-info`}>
-                {t('nav.contact-info')}
-            </Link>
-            <Link href={`/${params.locale}/technology-stack`}>
-                {t('nav.technology-stack')}
-            </Link>
-            <LocaleSelector message={t('locale-selector.message')} />
+        <nav className="sticky top-0 w-full border-b border-b-neutral-200 bg-white px-8 lg:px-96">
+            <div className="[&>a]:flex flex [&>a]:items-center max-w-[min(60ch,100%)] mr-auto ml-auto items-stretch [&>a]:rounded-lg [&>a:hover]:bg-neutral-200 [&>a]:p-3 [&>a]:transition-colors [&>a]:duration-1000 [&>a]:my-1">
+                <Link href={`/${params.locale}`}>{t('nav.home')}</Link>
+                <Link href={`/${params.locale}/contact-info`}>
+                    {t('nav.contact-info')}
+                </Link>
+                <Link href={`/${params.locale}/technology-stack`}>
+                    {t('nav.technology-stack')}
+                </Link>
+                <LocaleSelector message={t('locale-selector.message')} />
+            </div>
         </nav>
     )
 }
