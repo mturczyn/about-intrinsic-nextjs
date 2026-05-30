@@ -8,13 +8,14 @@ import { BsTelephone } from 'react-icons/bs'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaGithub } from 'react-icons/fa'
 import websiteLogo from '../../../public/website-logo.svg'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useState } from 'react'
 import { getRecaptchaToken } from '@/utils/recaptcha.client'
 import { getContactInformation } from '@/utils/contact-info'
 import { BounceLoader } from '@/components/bounce-loader'
 import { useQuery } from '@tanstack/react-query'
 import { Locale } from '@/i18n.config'
 import { Trans, useT } from 'next-i18next/client'
+import { TbTax } from 'react-icons/tb'
 
 export default function Page({
     params,
@@ -22,6 +23,7 @@ export default function Page({
     params: Promise<{ locale: Locale }>
 }) {
     const { t } = useT()
+    const [taxIdVisible, setTaxIdVisible] = useState(false)
 
     const { data: contactInfo, isLoading } = useQuery({
         queryKey: ['contact-info'],
@@ -64,6 +66,8 @@ export default function Page({
     return (
         <header className="contact-card">
             <Image
+                // onTouchStart={() => setTaxIdVisible(true)}
+                onClick={() => setTaxIdVisible((visible) => !visible)}
                 loading="eager"
                 src={websiteLogo}
                 alt="Intrinsic Michał Turczyn logo"
@@ -106,6 +110,12 @@ export default function Page({
                             url={contactInfo.contactInformation!.github}
                         />
                     </ContactInfoEntry>
+                    {taxIdVisible && (
+                        <ContactInfoEntry icon={<TbTax />}>
+                            {t('contact.taxId')}:{' '}
+                            {contactInfo.contactInformation!.taxId}
+                        </ContactInfoEntry>
+                    )}
                 </div>
             )}
         </header>

@@ -17,7 +17,8 @@
         "recaptchaFailedAccessDenied": "Dostęp zabroniony (weryfikacja reCAPTCHA nie powiodła się)",
         "poland": "Polska",
         "contactInfoUnavailable": "Informacje kontaktowe są obecnie niedostępne. Proszę spróbować ponownie później.",
-        "loadingContactInformation": "Ładowanie informacji kontaktowych..."
+        "loadingContactInformation": "Ładowanie informacji kontaktowych...",
+        "taxId": "NIP"
     },
     "technology-stack": {
         "theming": "Motywy",
